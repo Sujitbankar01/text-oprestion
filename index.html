@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEXT OPERATIONS</title>
+
+   
+    <style>
+        body{
+            padding: 0px;
+            margin: 0px;
+            background-color:whitesmoke;
+        }
+
+      
+
+        .container{
+            width: 50%;
+           
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            margin: 40px auto;
+            padding: 40px;
+            border-radius: 20px;
+            border: 1.5px solid black;
+            background-color: bisque;
+            
+        }
+
+        .heading{
+            text-align: center;
+            font-size: 45px;
+            color: black;
+            font-family:  "Permanent Marker";
+            margin-top: 1%;
+            font-family: cursive;
+        }
+
+        .input-container{
+            width: 80%;
+            display: flex;
+            align-items: center;
+            flex-direction: column; 
+            justify-content: center;
+            
+        }
+
+        .button{
+            width: 45%;
+            margin: 10px ;
+            padding: 5px;
+            padding-bottom: 10px;
+            font-size: 18px;
+            font-family:cursive;
+            font-weight: bold;
+            border-radius: 20px;
+            background-color: white;
+            color: black;
+            border: 2px solid black;
+            cursor: pointer;
+
+          
+        }
+
+        .input-box{
+           
+            border: 3px solid black;
+            color: black;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 20px;
+            font-family:Arial, Helvetica, sans-serif;
+            background-color:whitesmoke;
+
+            width: 100%;
+            height: 100px;
+            margin: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    
+    <div class="container">
+
+    
+        <h1 class="heading">Text Operations</h1>
+    
+
+    <div class="input-container">
+        <input type="text" id="input" placeholder="Enter your text" class="input-box"><br><br>
+
+        <input type="text" id="output" placeholder="output" class="input-box">
+    </div>
+
+    <div class="input-container">
+        <button type="button" class="button" onclick="operation('uppercase')"> upper case</button>
+        <button type="button" class="button" onclick="operation('lowercase')"> lower case</button>
+        <button type="button" class="button" onclick="operation('wordcount')"> word count</button>
+        <button type="button" class="button" onclick="operation('charactercount')"> character count</button>
+    </div>
+
+    </div>
+
+
+    <script>
+
+        const inputElement = document.getElementById("input")
+        const outputElement = document.getElementById("output")
+
+        function operation(operation)
+        {
+         if(operation == "uppercase"){
+            outputElement.value = inputElement.value.toUpperCase();
+         }else if (operation == "lowercase"){
+            outputElement.value = inputElement.value.toLowerCase();
+         }else if(operation == "wordcount"){
+             const totalWords = inputElement.value.split(" ").length;
+             outputElement.value = `Word Count: ${totalWords}`
+         }else{
+             const totalCharCount = inputElement.value.length;
+             outputElement.value = ` Character Count: ${totalCharCount}`
+         }
+        }
+    </script>
+</body>
+</html>
